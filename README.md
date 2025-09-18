@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Demonstração de Métodos HTTP - React + Beeceptor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta aplicação demonstra todos os métodos HTTP (GET, POST, PUT, PATCH, DELETE) usando tanto **Fetch API** quanto **Axios** com o Beeceptor como API mockada.
 
-## Available Scripts
+## 🚀 Funcionalidades
 
-In the project directory, you can run:
+- ✅ **GET** - Buscar todos os usuários
+- ✅ **GET by ID** - Buscar usuário específico
+- ✅ **POST** - Criar novo usuário
+- ✅ **PUT** - Atualizar usuário completamente
+- ✅ **PATCH** - Atualizar usuário parcialmente
+- ✅ **DELETE** - Deletar usuário
 
-### `npm start`
+## 🛠️ Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js** - Framework frontend
+- **Fetch API** - Requisições HTTP nativas
+- **Axios** - Biblioteca para requisições HTTP
+- **Beeceptor** - API mockada para testes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Instalação e Execução
 
-### `npm test`
+```bash
+# Instalar dependências
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Executar a aplicação
+npm start
+```
 
-### `npm run build`
+A aplicação estará disponível em `http://localhost:3000`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔗 APIs Disponíveis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A aplicação suporta duas opções de API:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. JSONPlaceholder (Padrão)
+- **URL:** `https://jsonplaceholder.typicode.com`
+- **Tipo:** Simulação - não persiste dados reais
+- **Uso:** Ideal para demonstrar funcionamento dos métodos HTTP
 
-### `npm run eject`
+### 2. Beeceptor (Recomendado para testes reais)
+- **Como criar:** Acesse [beeceptor.com](https://beeceptor.com)
+- **Tipo:** Persistência real durante a sessão
+- **Uso:** POST realmente adiciona, DELETE realmente remove
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 📋 Como configurar Beeceptor:
+1. Acesse https://beeceptor.com
+2. Digite um nome único (ex: "dev-web-seuNome")
+3. Clique em "Create HTTP endpoint"
+4. Use a URL gerada na aplicação
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📝 Como Usar
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **GET**: Clique nos botões para buscar usuários
+2. **POST**: Preencha o formulário e crie um novo usuário
+3. **PUT/PATCH**: Informe um ID e os dados para atualizar
+4. **DELETE**: Informe um ID para deletar
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Cada operação mostra o resultado tanto para Fetch quanto para Axios, permitindo comparar as duas abordagens.
 
-## Learn More
+## 🎯 Objetivo Acadêmico
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Esta aplicação foi desenvolvida para a disciplina de **Desenvolvimento de Software para Web**, demonstrando:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Implementação prática de todos os métodos HTTP
+- Comparação entre Fetch API e Axios
+- Uso de API mockada para testes
+- Interface React funcional e responsiva
+- Tratamento de erros e estados de loading
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Desenvolvido para fins acadêmicos - UNIRV**
