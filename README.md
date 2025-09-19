@@ -7,7 +7,6 @@ Esta aplicação demonstra os métodos HTTP (GET, POST, PUT) usando tanto **Fetc
 ## 🚀 Funcionalidades
 
 - ✅ **GET** - Buscar todos os usuários
-- ✅ **GET by ID** - Buscar usuário específico
 - ✅ **POST** - Criar novo usuário
 - ✅ **PUT** - Atualizar usuário completamente
 
