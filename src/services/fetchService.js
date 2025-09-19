@@ -16,19 +16,6 @@ class FetchService {
     }
   }
 
-  // GET - Buscar usuário por ID
-  async getUserById(id) {
-    try {
-      const response = await fetch(`${ENDPOINTS.USERS}/${id}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      return { success: true, data };
-    } catch (error) {
-      return { success: false, error: error.message };
-    }
-  }
 
   // POST - Criar novo usuário
   async createUser(userData) {
@@ -75,44 +62,6 @@ class FetchService {
     }
   }
 
-  // PATCH - Atualizar usuário parcialmente
-  async patchUser(id, partialData) {
-    try {
-      const response = await fetch(`${ENDPOINTS.USERS}/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(partialData),
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      return { success: true, data };
-    } catch (error) {
-      return { success: false, error: error.message };
-    }
-  }
-
-  // DELETE - Deletar usuário
-  async deleteUser(id) {
-    try {
-      const response = await fetch(`${ENDPOINTS.USERS}/${id}`, {
-        method: 'DELETE',
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      return { success: true, message: 'Usuário deletado com sucesso' };
-    } catch (error) {
-      return { success: false, error: error.message };
-    }
-  }
 }
 
 const fetchServiceInstance = new FetchService();

@@ -13,7 +13,6 @@ class AxiosService {
     // Esta é a correção definitiva para garantir que o Beeceptor entenda o JSON.
     this.axiosInstance.defaults.headers.post['Content-Type'] = 'application/json';
     this.axiosInstance.defaults.headers.put['Content-Type'] = 'application/json';
-    this.axiosInstance.defaults.headers.patch['Content-Type'] = 'application/json';
 
     // Configurar interceptors para tratamento de erros
     this.axiosInstance.interceptors.response.use(
@@ -35,15 +34,6 @@ class AxiosService {
     }
   }
 
-  // GET - Buscar usuário por ID
-  async getUserById(id) {
-    try {
-      const response = await this.axiosInstance.get(`${ENDPOINTS.USERS}/${id}`);
-      return { success: true, data: response.data };
-    } catch (error) {
-      return { success: false, error: error.message };
-    }
-  }
 
   // POST - Criar novo usuário
   async createUser(userData) {
@@ -67,25 +57,6 @@ class AxiosService {
     }
   }
 
-  // PATCH - Atualizar usuário parcialmente
-  async patchUser(id, partialData) {
-    try {
-      const response = await this.axiosInstance.patch(`${ENDPOINTS.USERS}/${id}`, partialData);
-      return { success: true, data: response.data };
-    } catch (error) {
-      return { success: false, error: error.message };
-    }
-  }
-
-  // DELETE - Deletar usuário
-  async deleteUser(id) {
-    try {
-      await this.axiosInstance.delete(`${ENDPOINTS.USERS}/${id}`);
-      return { success: true, message: 'Usuário deletado com sucesso' };
-    } catch (error) {
-      return { success: false, error: error.message };
-    }
-  }
 }
 
 const axiosServiceInstance = new AxiosService();

@@ -49,10 +49,6 @@ const HttpMethodDemo = () => {
     executeOperation(() => service.getUsers(), 'GET', library);
   };
 
-  const handleGetById = (library) => {
-    const service = library === 'fetch' ? fetchService : axiosService;
-    executeOperation(() => service.getUserById(userId), 'GET_BY_ID', library);
-  };
 
   const handlePost = (library) => {
     const service = library === 'fetch' ? fetchService : axiosService;
@@ -64,16 +60,6 @@ const HttpMethodDemo = () => {
     executeOperation(() => service.updateUser(userId, formData), 'PUT', library);
   };
 
-  const handlePatch = (library) => {
-    const service = library === 'fetch' ? fetchService : axiosService;
-    const patchData = { name: formData.name };
-    executeOperation(() => service.patchUser(userId, patchData), 'PATCH', library);
-  };
-
-  const handleDelete = (library) => {
-    const service = library === 'fetch' ? fetchService : axiosService;
-    executeOperation(() => service.deleteUser(userId), 'DELETE', library);
-  };
 
   const renderResult = (method, library) => {
     const key = `${method}-${library}`;
@@ -161,7 +147,7 @@ const HttpMethodDemo = () => {
   return (
     <div className="http-demo">
       <h1>Demonstração de Métodos HTTP</h1>
-      <p>Esta aplicação demonstra os métodos HTTP (GET, POST, PUT, PATCH, DELETE) com Fetch e Axios, utilizando o Beeceptor.</p>
+      <p>Esta aplicação demonstra os métodos HTTP (GET, POST, PUT) com Fetch e Axios, utilizando o Beeceptor.</p>
       
       <BeeceptorSetup />
       
@@ -170,11 +156,8 @@ const HttpMethodDemo = () => {
       </div>
 
       {renderMethodSection('GET', 'GET - Buscar Todos os Usuários', handleGet)}
-      {renderMethodSection('GET_BY_ID', 'GET - Buscar Usuário por ID', handleGetById, false, true)}
       {renderMethodSection('POST', 'POST - Criar Novo Usuário', handlePost, true)}
       {renderMethodSection('PUT', 'PUT - Atualizar Usuário Completamente', handlePut, true, true)}
-      {renderMethodSection('PATCH', 'PATCH - Atualizar Usuário Parcialmente', handlePatch, true, true)}
-      {renderMethodSection('DELETE', 'DELETE - Deletar Usuário', handleDelete, false, true)}
     </div>
   );
 };
