@@ -15,12 +15,6 @@ const BeeceptorSetup = () => {
 ]`
     },
     {
-      title: "GET /users/:id - Buscar usuário por ID",
-      method: "GET", 
-      path: "/users/*",
-      response: `{"id": 1, "name": "João Silva", "email": "joao@test.com", "age": 25}`
-    },
-    {
       title: "POST /users - Criar usuário",
       method: "POST",
       path: "/users", 
@@ -46,30 +40,6 @@ const BeeceptorSetup = () => {
   "timestamp": "2024-01-01T10:00:00Z"
 }`
     },
-    {
-      title: "PATCH /users/:id - Atualizar parcialmente",
-      method: "PATCH", 
-      path: "/users/*",
-      response: `{
-  "id": 1,
-  "name": "{{request.body.name || 'João Silva'}}",
-  "email": "joao@test.com",
-  "age": "{{request.body.age || 25}}",
-  "patched": true,
-  "timestamp": "2024-01-01T10:00:00Z"
-}`
-    },
-    {
-      title: "DELETE /users/:id - Deletar usuário",
-      method: "DELETE",
-      path: "/users/*",
-      response: `{
-  "deleted": true,
-  "id": "{{request.pathParams.0}}",
-  "message": "Usuário deletado com sucesso",
-  "timestamp": "2024-01-01T10:00:00Z"
-}`
-    }
   ];
 
   const copyToClipboard = (text) => {
@@ -134,7 +104,7 @@ const BeeceptorSetup = () => {
 
           <div className="setup-footer">
             <div className="important-note">
-              <strong>⚠️ Importante:</strong> Configure TODAS as regras acima no Beeceptor para que todos os métodos funcionem corretamente!
+              <strong>⚠️ Importante:</strong> Configure as regras acima no Beeceptor para que os métodos GET, POST e PUT funcionem corretamente!
             </div>
           </div>
         </div>
