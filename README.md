@@ -1,6 +1,8 @@
 # Demonstração de Métodos HTTP - React + Beeceptor
 
-Esta aplicação demonstra todos os métodos HTTP (GET, POST, PUT, PATCH, DELETE) usando tanto **Fetch API** quanto **Axios** com o Beeceptor como API mockada.
+Esta aplicação demonstra os métodos HTTP (GET, POST, PUT) usando tanto **Fetch API** quanto **Axios** com o Beeceptor como API mockada.
+
+**⚠️ Nota:** O projeto foi limitado aos métodos GET, POST e PUT pois o Beeceptor gratuito não permite a criação de mais tipos de requisições.
 
 ## 🚀 Funcionalidades
 
@@ -8,8 +10,6 @@ Esta aplicação demonstra todos os métodos HTTP (GET, POST, PUT, PATCH, DELETE
 - ✅ **GET by ID** - Buscar usuário específico
 - ✅ **POST** - Criar novo usuário
 - ✅ **PUT** - Atualizar usuário completamente
-- ✅ **PATCH** - Atualizar usuário parcialmente
-- ✅ **DELETE** - Deletar usuário
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -54,8 +54,7 @@ A aplicação suporta duas opções de API:
 
 1. **GET**: Clique nos botões para buscar usuários
 2. **POST**: Preencha o formulário e crie um novo usuário
-3. **PUT/PATCH**: Informe um ID e os dados para atualizar
-4. **DELETE**: Informe um ID para deletar
+3. **PUT**: Informe um ID e os dados para atualizar usuário
 
 Cada operação mostra o resultado tanto para Fetch quanto para Axios, permitindo comparar as duas abordagens.
 
@@ -63,11 +62,36 @@ Cada operação mostra o resultado tanto para Fetch quanto para Axios, permitind
 
 Esta aplicação foi desenvolvida para a disciplina de **Desenvolvimento de Software para Web**, demonstrando:
 
-- Implementação prática de todos os métodos HTTP
+- Implementação prática dos métodos HTTP (GET, POST, PUT)
 - Comparação entre Fetch API e Axios
 - Uso de API mockada para testes
 - Interface React funcional e responsiva
 - Tratamento de erros e estados de loading
+- Limitações do Beeceptor gratuito
+
+## 🚀 Deploy na Vercel
+
+Este projeto está preparado para ser hospedado na Vercel:
+
+### Como fazer o deploy:
+
+1. **Fork este repositório** ou faça upload do código para o GitHub
+2. **Acesse [vercel.com](https://vercel.com)** e faça login
+3. **Clique em "New Project"**
+4. **Importe o repositório** do GitHub
+5. **Configure o projeto:**
+   - Framework Preset: `Create React App`
+   - Build Command: `npm run build`
+   - Output Directory: `build`
+6. **Clique em "Deploy"**
+
+### Configurações automáticas:
+- ✅ Build automático a cada push
+- ✅ Deploy automático para produção
+- ✅ HTTPS habilitado
+- ✅ CDN global
+
+O projeto será disponibilizado em uma URL única da Vercel (ex: `https://seu-projeto.vercel.app`)
 
 ---
 
